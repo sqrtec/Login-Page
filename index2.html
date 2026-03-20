@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎉 عيد ميلاد سعيد</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: white;
+        overflow: hidden;
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 500px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        border: 1px solid rgba(255,255,255,0.1);
+        animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        opacity: 0.85;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 10px;
+        background: #00c9ff;
+        color: #0f2027;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: bold;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: #92fe9d;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* 📱 للجوال */
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .card {
+            padding: 20px;
+        }
+    }
+
+    /* 🖥️ للشاشات الكبيرة */
+    @media (min-width: 1000px) {
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🎉عيد ميلاد سعيد</h1>
+    <p id="text">جاهز للمفاجأة؟ 😎</p>
+    <button onclick="celebrate()">اضغط هنا</button>
+</div>
+
+<script>
+    function celebrate() {
+        document.getElementById("text").innerText = "كل سنة وأنت أسطورة 💪🔥";
+
+        for (let i = 0; i < 40; i++) {
+        let confetti = document.createElement("div");
+        confetti.style.position = "fixed";
+        confetti.style.width = "8px";
+        confetti.style.height = "8px";
+        confetti.style.background = "white";
+        confetti.style.top = "-10px";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.opacity = Math.random();
+        confetti.style.transition = "transform 3s linear";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.style.transform = "translateY(110vh)";
+        }, 10);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 3000);
+    }
+}
+</script>
+</body>
+</html>
